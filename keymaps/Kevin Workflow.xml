@@ -13,13 +13,6 @@
     <keyboard-shortcut first-keystroke="meta i" />
   </action>
   <action id="FindNext" />
-  <action id="Git.Branches">
-    <keyboard-shortcut first-keystroke="meta b" />
-  </action>
-  <action id="GotoDeclaration">
-    <mouse-shortcut keystroke="meta button1" />
-    <mouse-shortcut keystroke="button2" />
-  </action>
   <action id="GotoFile">
     <keyboard-shortcut first-keystroke="meta p" />
   </action>
