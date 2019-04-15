@@ -1,0 +1,431 @@
+<templateSet group="user">
+  <template name="formtext" value="&lt;!-- $VALUE$ Form Input --&gt;&#10;&lt;div class=&quot;form-group col-md-$SIZE$&quot;&gt;&#10;    {!! Form::label('$NAME$', '$VALUE$', ['class' =&gt; 'bmd-label-floating']) !!}&#10;    {!! Form::text('$NAME$', $NULL$, ['class' =&gt; 'form-control $CLASS$', 'id' =&gt; '$NAME$'$REQUIRED$$OTHER$]) !!}&#10;&lt;/div&gt;$END$" description="Form textfield" toReformat="true" toShortenFQNames="true">
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="SIZE" expression="" defaultValue="&quot;6&quot;" alwaysStopAt="true" />
+    <variable name="NAME" expression="snakeCase(VALUE)" defaultValue="" alwaysStopAt="false" />
+    <variable name="NULL" expression="" defaultValue="&quot;null&quot;" alwaysStopAt="true" />
+    <variable name="CLASS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="REQUIRED" expression="" defaultValue="&quot;, 'required',&quot; " alwaysStopAt="true" />
+    <variable name="OTHER" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="formrow" value="&lt;div class=&quot;form-row&quot;&gt;&#10;    $END$&#10;&lt;/div&gt;" description="Form Row" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+      <option name="PHP Class Member" value="false" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP Expression" value="false" />
+      <option name="PHP Statement" value="false" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="cardtext" value="&lt;div class=&quot;card&quot;&gt;&#10;    &lt;div class=&quot;card-header card-header-$COLOR$ card-header-text&quot;&gt;&#10;        &lt;div class=&quot;card-text&quot;&gt;&#10;            &lt;h4 class=&quot;card-title&quot;&gt;$TITLE$&lt;/h4&gt;&#10;        &lt;/div&gt;&#10;    &lt;/div&gt;&#10;    &lt;div class=&quot;card-body&quot;&gt;&#10;        $END$&#10;    &lt;/div&gt;&#10;&lt;/div&gt;" description="Card with Text Header" toReformat="false" toShortenFQNames="true">
+    <variable name="COLOR" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="TITLE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+      <option name="PHP Class Member" value="false" />
+      <option name="PHP Comment" value="false" />
+      <option name="PHP Expression" value="false" />
+      <option name="PHP Statement" value="false" />
+      <option name="PHP String Literal" value="false" />
+    </context>
+  </template>
+  <template name="authenticatedlayout" value="@extends('layouts.authenticated')&#10;&#10;@section('page-title')&#10;&#10;    {{--Enter title for both the page title in the browser tab as well as the title at the top of the page--}}&#10;    $PAGETITLE$&#10;&#10;@endsection&#10;&#10;@section('content')&#10;&#10;    $END$&#10;&#10;@endsection&#10;&#10;@section('javascript')&#10;&#10;    {{--insert any javascript specific to this page here--}}&#10;&#10;@endsection" description="Insert the Authenticated Layout" toReformat="true" toShortenFQNames="true">
+    <variable name="PAGETITLE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="datatable" value="&lt;div class=&quot;toolbar&quot;&gt;&#10;        &lt;!--        Here you can write extra buttons/actions for the toolbar              --&gt;&#10;    &lt;/div&gt;&#10;    &lt;div class=&quot;material-datatables&quot;&gt;&#10;        &lt;table id=&quot;$ID$&quot; class=&quot;table table-striped table-no-bordered table-hover datatables&quot;&#10;               cellspacing=&quot;0&quot; width=&quot;100%&quot; style=&quot;width:100%&quot;&gt;&#10;            &lt;thead&gt;&#10;                &lt;tr&gt;&#10;                    &lt;th&gt;$END$&lt;/th&gt;&#10;                &lt;/tr&gt;&#10;            &lt;/thead&gt;&#10;            &lt;tfoot&gt;&#10;                &lt;tr&gt;&#10;                    &#10;                &lt;/tr&gt;&#10;            &lt;/tfoot&gt;&#10;            &lt;tbody&gt;&#10;            &#10;            &lt;/tbody&gt;&#10;        &lt;/table&gt;&#10;    &lt;/div&gt;" description="Insert a Data Table" toReformat="true" toShortenFQNames="true">
+    <variable name="ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="@foreach" value="@foreach($VAR$ as $ENTRY$)&#10;    $END$              &#10;@endforeach" description="Blade Foreach" toReformat="true" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ENTRY" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="datatablesjs" value="$(document).ready(function() {&#10;            // Setup - add a text input to each footer cell&#10;            $('#$tablename$ tfoot th').each( function () {&#10;                var title = $(this).text();&#10;                $(this).html( '&lt;input type=&quot;text&quot; placeholder=&quot;Search&quot; /&gt;' );&#10;            } );&#10;&#10;            // DataTable&#10;            var table = $('#$tablename$').DataTable();&#10;&#10;            // Apply the search&#10;            table.columns().every( function () {&#10;                var that = this;&#10;&#10;                $( 'input', this.footer() ).on( 'keyup change', function () {&#10;                    if ( that.search() !== this.value ) {&#10;                        that&#10;                            .search( this.value )&#10;                            .draw();&#10;                    }&#10;                } );&#10;            } );&#10;&#10;            $('#$tablename$ tfoot tr').appendTo('#$tablename$ thead');&#10;&#10;        } );" description="Basic Datatables Javascript" toReformat="true" toShortenFQNames="true">
+    <variable name="tablename" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="ES6_STATEMENT" value="true" />
+      <option name="HTML" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+      <option name="PHP" value="true" />
+      <option name="VUE_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="@card" value="@card(['type' =&gt; '$TYPE$', 'color' =&gt; 'info', 'title' =&gt; '$TITLE$' , $SUBTITLE$$ICON$])&#10;    $END$&#10;@endcard" description="Intellow Custom Card" toReformat="false" toShortenFQNames="true">
+    <variable name="TYPE" expression="" defaultValue="&quot;text or icon&quot;" alwaysStopAt="true" />
+    <variable name="TITLE" expression="" defaultValue="&quot;title&quot;" alwaysStopAt="true" />
+    <variable name="SUBTITLE" expression="" defaultValue="&quot;'subtitle' =&gt; '&quot;" alwaysStopAt="true" />
+    <variable name="ICON" expression="" defaultValue="&quot;'icon' =&gt; '&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="formopen" value="{!! Form::open(['action' =&gt; '$CONTROLLERMETHOD$','method' =&gt; '$TYPE$']) !!}&#10;    $END$&#10;{!! Form::close() !!}" description="Laravel Collective Form Open" toReformat="true" toShortenFQNames="true">
+    <variable name="CONTROLLERMETHOD" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="TYPE" expression="" defaultValue="&quot;POST&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="th" value="&lt;th&gt;$VALUE$&lt;/th&gt;$END$" description="Table Header" toReformat="false" toShortenFQNames="true">
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="td" value="&lt;td&gt;$VALUE$&lt;/td&gt;$END$" description="Table Cell" toReformat="false" toShortenFQNames="true">
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="sidebarresource" value="&lt;li class=&quot;nav-item {{ $request-&gt;segment(1) == '$SLUG$' ? 'active' : '' }}&quot;&gt;&#10;    &lt;a class=&quot;nav-link {{ $request-&gt;segment(1) == '$SLUG$' ? 'show' : 'collapsed' }}&quot; data-toggle=&quot;collapse&quot; href=&quot;#$SLUG$Pages&quot;&#10;       aria-expanded=&quot;{{ $request-&gt;segment(1) == '$SLUG$' ? 'true' : 'false' }}&quot;&gt;&#10;       &lt;i class=&quot;material-icons&quot;&gt;description&lt;/i&gt;&#10;       &lt;p&gt;$TITLE$&lt;b class=&quot;caret&quot;&gt;&lt;/b&gt;&lt;/p&gt;&#10;    &lt;/a&gt;&#10;    &lt;div id=&quot;$SLUG$Pages&quot; class=&quot;{{ $request-&gt;segment(1) == '$SLUG$' ? 'collapse show' : 'collapse' }}&quot; style=&quot;&quot;&gt;&#10;        &lt;ul class=&quot;nav&quot;&gt;&#10;            $END$&#10;        &lt;/ul&gt;&#10;    &lt;/div&gt;&#10;&lt;/li&gt;" description="Sidebar expandable group" toReformat="false" toShortenFQNames="true">
+    <variable name="TITLE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="SLUG" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="sidebarlink" value="&lt;li class=&quot;nav-item {{ $request-&gt;segment(1) == '$SLUG1$' &amp;&amp; $request-&gt;segment(2) == '$SLUG2$' ? 'active' : ''}}&quot;&gt;&#10;    &lt;a class=&quot;nav-link&quot; href=&quot;/$SLUG1$/$SLUG2$&quot;&gt;&#10;        &lt;span class=&quot;sidebar-mini&quot;&gt;$LETTER$&lt;/span&gt;&#10;        &lt;span class=&quot;sidebar-normal&quot;&gt;$LINK$&lt;/span&gt;&#10;    &lt;/a&gt;&#10;&lt;/li&gt;" description="Link in Sidebar" toReformat="false" toShortenFQNames="true">
+    <variable name="SLUG1" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="SLUG2" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="LINK" expression="" defaultValue="&quot;Words in Sidebar&quot;" alwaysStopAt="true" />
+    <variable name="LETTER" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="@table" value="@table(['striped' =&gt; $STRIPED$, 'datatables' =&gt; $DATATABLES$, 'table_id' =&gt; '$ID$', 'table_hover' =&gt; '$TABLEHOVER$' ])&#10;    $END$&#10;@endtable" description="Table" toReformat="false" toShortenFQNames="true">
+    <variable name="STRIPED" expression="" defaultValue="&quot;true&quot;" alwaysStopAt="true" />
+    <variable name="DATATABLES" expression="" defaultValue="&quot;true&quot;" alwaysStopAt="true" />
+    <variable name="ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="TABLEHOVER" expression="" defaultValue="&quot;table-hover&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="thead" value="&lt;thead&gt;&#10;    &lt;tr&gt;&#10;        &lt;th&gt;$VAR1$&lt;/th&gt;&#10;    &lt;/tr&gt;&#10;&lt;/thead&gt;&#10;&lt;tfoot&gt;&#10;    &lt;tr&gt;&#10;        &lt;th&gt;$VAR1$&lt;/th&gt;&#10;    &lt;/tr&gt;&#10;&lt;/tfoot&gt;&#10;&lt;tbody&gt;&#10;    $END$&#10;&lt;/tbody&gt;" description="Table Header" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR1" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="belongsto" value="public function $LOWER$() {&#10;    return $this-&gt;belongsTo($MODEL$::class);&#10;}" description="Model Belongs To" toReformat="true" toShortenFQNames="true">
+    <variable name="MODEL" expression="" defaultValue="&quot;Model&quot;" alwaysStopAt="true" />
+    <variable name="LOWER" expression="snakeCase(MODEL)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Class Member" value="true" />
+    </context>
+  </template>
+  <template name="hasone" value="public function $SNAKE$()&#10;    {&#10;        return $this-&gt;hasOne($MODEL$::class);&#10;    }" description="Model Has One" toReformat="true" toShortenFQNames="true">
+    <variable name="MODEL" expression="" defaultValue="&quot;Model&quot;" alwaysStopAt="true" />
+    <variable name="SNAKE" expression="snakeCase(MODEL)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Class Member" value="true" />
+    </context>
+  </template>
+  <template name="scope" value="&lt;?php&#10;&#10;namespace App\Scopes;&#10;&#10;use Illuminate\Database\Eloquent\Scope;&#10;use Illuminate\Database\Eloquent\Model;&#10;use Illuminate\Database\Eloquent\Builder;&#10;&#10;class $CLASS$ implements Scope&#10;{&#10;    /**&#10;     * Apply the scope to a given Eloquent query builder.&#10;     *&#10;     * @param  \Illuminate\Database\Eloquent\Builder  $builder&#10;     * @param  \Illuminate\Database\Eloquent\Model  $model&#10;     * @return void&#10;     */&#10;    public function apply(Builder $builder, Model $model)&#10;    {&#10;        $builder-&gt;where($CONDITION$);&#10;    }&#10;}" description="Scope Template" toReformat="false" toShortenFQNames="true">
+    <variable name="CLASS" expression="" defaultValue="&quot;ClassScope&quot;" alwaysStopAt="true" />
+    <variable name="CONDITION" expression="" defaultValue="&quot;'age', '&gt;', 200&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name="hasmany" value="public function $SNAKE$()&#10;{&#10;    return $this-&gt;hasMany($MODEL$::class);&#10;}" description="Model Has Many Relationship" toReformat="false" toShortenFQNames="true">
+    <variable name="MODEL" expression="" defaultValue="&quot;Model&quot;" alwaysStopAt="true" />
+    <variable name="SNAKE" expression="snakeCase(MODEL)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="tenantscope" value="protected static function boot()&#10;{&#10;    parent::boot(); // TODO: Change the autogenerated stub&#10;&#10;    static::addGlobalScope(new TenantScope);&#10;}" description="Add Tenant Scope to Boot Function" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="modelpivot" value="Schema::create('$A$_$B$', function (Blueprint $table) {&#10;   $table-&gt;integer('$A$_id');&#10;   $table-&gt;integer('$B$_id');&#10;   $table-&gt;primary(['$A$_id', '$B$_id']);&#10;});" description="Pivot Table for Model" toReformat="false" toShortenFQNames="true">
+    <variable name="A" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="B" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="belongstomany" value="public function $SNAKEPLURAL$()&#10;{&#10;    return $this-&gt;belongsToMany($MODEL$::class);&#10;}" description="Belongs to Many" toReformat="false" toShortenFQNames="true">
+    <variable name="MODEL" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="SNAKEPLURAL" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="formselect" value="&lt;!-- $NAME$ Form Input --&gt;&#10;&lt;div class=&quot;form-group col-md-$SIZE$&quot;&gt;&#10;    {!! Form::select('$NAME2$', $ARRAY$, $DEFAULT$, [&#10;        'class' =&gt; 'form-control selectpicker',&#10;        'title' =&gt; '$NAME$',&#10;        'required',&#10;        'data-live-search' =&gt; 'true',&#10;        'data-style' =&gt; 'select-with-transition',&#10;        'data-size' =&gt; 5&#10;    ]) !!}&#10;&lt;/div&gt;" description="Select form (choose one)" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="SIZE" expression="" defaultValue="&quot;12&quot;" alwaysStopAt="true" />
+    <variable name="NAME2" expression="snakeCase(NAME)" defaultValue="" alwaysStopAt="true" />
+    <variable name="ARRAY" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="DEFAULT" expression="" defaultValue="&quot;null&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="formnumber" value="&lt;!-- $NAME$ Form Input --&gt;&#10;&lt;div class=&quot;form-group col-md-$SIZE$&quot;&gt;&#10;    {!! Form::label('$NAMESNAKE$', '$NAME$', ['class' =&gt; 'bmd-label-floating']) !!}&#10;    {!! Form::number('$NAMESNAKE$', null, ['class' =&gt; 'form-control ', 'id' =&gt; '$NAMESNAKE$', $REQUIRED$ 'min' =&gt; '$MIN$', 'max' =&gt; '$MAX$', 'step' =&gt; '$STEP$']) !!}&#10;&lt;/div&gt;$END$" description="Input field for a number" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="SIZE" expression="" defaultValue="&quot;12&quot;" alwaysStopAt="true" />
+    <variable name="NAMESNAKE" expression="snakeCase(NAME)" defaultValue="" alwaysStopAt="true" />
+    <variable name="REQUIRED" expression="" defaultValue="&quot;'required',&quot;" alwaysStopAt="true" />
+    <variable name="MIN" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="MAX" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="STEP" expression="" defaultValue="&quot;0&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="tenantlayout" value="@extends('layouts.tenant')&#10;&#10;@section('page-title')&#10;&#10;    {{--Enter title for both the page title in the browser tab as well as the title at the top of the page--}}&#10;    $PAGETITLE$&#10;&#10;@endsection&#10;&#10;@section('content')&#10;&#10;    $END$&#10;&#10;@endsection&#10;&#10;@section('javascript')&#10;&#10;    {{--insert any javascript specific to this page here--}}&#10;&#10;@endsection" description="Tenant Layout" toReformat="false" toShortenFQNames="true">
+    <variable name="PAGETITLE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="formsubmit" value="{!! Form::submit('$VAR$', ['class' =&gt; 'btn btn-primary']) !!}" description="Form Submit Button" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="&quot;Button Text&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="formcheck" value="&lt;div class=&quot;form-check&quot;&gt;&#10;    &lt;label class=&quot;form-check-label&quot;&gt;&#10;        &lt;input class=&quot;form-check-input $CLASS$&quot; type=&quot;checkbox&quot;&#10;               value=&quot;$VALUE$&quot; name=&quot;$NAME$[]&quot;&gt; {{$VALUE2$}}&#10;        &lt;span class=&quot;form-check-sign&quot;&gt;&#10;            &lt;span class=&quot;check&quot;&gt;&lt;/span&gt;&#10;        &lt;/span&gt;&#10;    &lt;/label&gt;&#10;&lt;/div&gt;" description="Checkbox for Form" toReformat="false" toShortenFQNames="true">
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="NAME" expression="" defaultValue="&quot;name&quot;" alwaysStopAt="true" />
+    <variable name="VALUE2" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CLASS" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="tr" value="&lt;tr&gt;$VAR$&lt;/tr&gt;&#10;$END$" description="table row" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="accessor" value="public function get$NAME$Attribute($VARS$) {&#10;    $END$&#10;}" description="Create an accessor (calculated field)" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VARS" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="formhidden" value="{!! Form::hidden('$VALUE$', '$NAME$') !!}" description="Hidden Form" toReformat="false" toShortenFQNames="true">
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="formemail" value="&lt;!-- Email Form Input --&gt;&#10;&lt;div class=&quot;form-group col-md-$SIZE$&quot;&gt;&#10;    {!! Form::label('email', 'Email', ['class' =&gt; 'bmd-label-floating']) !!}&#10;    {!! Form::email('email', null, ['class' =&gt; 'form-control ', 'id' =&gt; 'email', $REQ$]) !!}&#10;&lt;/div&gt;" description="Form Email Input" toReformat="false" toShortenFQNames="true">
+    <variable name="SIZE" expression="" defaultValue="&quot;6&quot;" alwaysStopAt="true" />
+    <variable name="REQ" expression="" defaultValue="&quot;'required'&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="vformtext" value="&lt;!-- $NAME$ Form Input --&gt;&#10;&lt;div class=&quot;form-group label-floating bmd-form-group $SIZE$&quot; :class=&quot;{'is-filled': this.$MODEL$.$SNAKE$}&quot;&gt;&#10;    &lt;label for=&quot;$SNAKE$&quot; class=&quot;bmd-label-floating&quot;&gt;$NAME$&lt;/label&gt;&#10;    &lt;input type=&quot;text&quot; id=&quot;$SNAKE$&quot; name=&quot;$SNAKE$&quot; class=&quot;form-control&quot; v-model=&quot;$MODEL$.$SNAKE$&quot;&gt;&#10;    &lt;div class=&quot;input-error&quot; v-if=&quot;errors.has('$SNAKE$')&quot; v-text=&quot;errors.get('$SNAKE$')&quot;&gt;&lt;/div&gt;&#10;&lt;/div&gt;" description="Vue Text Input" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="MODEL" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="SNAKE" expression="snakeCase(NAME)" defaultValue="" alwaysStopAt="false" />
+    <variable name="SIZE" expression="" defaultValue="&quot;col-md-12&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="Vue" value="true" />
+    </context>
+  </template>
+  <template name="vformnumber" value="&lt;!-- $NAME$ Form Input --&gt;&#10;&lt;div class=&quot;form-group label-floating bmd-form-group $SIZE$&quot; :class=&quot;{'is-filled': this.$MODEL$.$SNAKE$}&quot;&gt;&#10;    &lt;label for=&quot;$SNAKE$&quot; class=&quot;bmd-label-floating&quot;&gt;$NAME$&lt;/label&gt;&#10;    &lt;input type=&quot;number&quot; id=&quot;$SNAKE$&quot; name=&quot;$SNAKE$&quot; class=&quot;form-control&quot; v-model=&quot;$MODEL$.$SNAKE$&quot;&gt;&#10;    &lt;div class=&quot;input-error&quot; v-if=&quot;errors.has('$SNAKE$')&quot; v-text=&quot;errors.get('$SNAKE$')&quot;&gt;&lt;/div&gt;&#10;&lt;/div&gt;" description="Vue Component Template" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="MODEL" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="SNAKE" expression="snakeCase(NAME)" defaultValue="" alwaysStopAt="false" />
+    <variable name="SIZE" expression="" defaultValue="&quot;col-md-12&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="Vue" value="true" />
+    </context>
+  </template>
+  <template name="vformtextarea" value="&lt;!-- $NAME$ Form Input --&gt;&#10;&lt;div class=&quot;form-group label-floating bmd-form-group $SIZE$&quot; :class=&quot;{'is-filled': this.$MODEL$.$SNAKE$}&quot;&gt;&#10;    &lt;label for=&quot;$SNAKE$&quot; class=&quot;bmd-label-floating&quot;&gt;$NAME$&lt;/label&gt;&#10;    &lt;textarea id=&quot;$SNAKE$&quot; name=&quot;$SNAKE$&quot; class=&quot;form-control&quot; rows=&quot;$ROWS$&quot; v-model=&quot;$MODEL$.$SNAKE$&quot;&gt;&lt;/textarea&gt;&#10;    &lt;div class=&quot;input-error&quot; v-if=&quot;errors.has('$SNAKE$')&quot; v-text=&quot;errors.get('$SNAKE$')&quot;&gt;&lt;/div&gt;&#10;&lt;/div&gt;" description="Vue Form Textarea" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="MODEL" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="SNAKE" expression="snakeCase(NAME)" defaultValue="" alwaysStopAt="false" />
+    <variable name="SIZE" expression="" defaultValue="&quot;col-md-12&quot;" alwaysStopAt="true" />
+    <variable name="ROWS" expression="" defaultValue="&quot;4&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="Vue" value="true" />
+    </context>
+  </template>
+  <template name="vueroutes" value="Route::post('/$API$s', [\App\Http\Controllers\$CONTROLLER$::class, 'get']);&#10;Route::post('/$API$', [\App\Http\Controllers\$CONTROLLER$::class, 'store']);&#10;Route::patch('/$API$/{id}', [\App\Http\Controllers\$CONTROLLER$::class, 'update']);&#10;Route::delete('/$API$/{id}', [\App\Http\Controllers\$CONTROLLER$::class, 'delete']);" description="API Routes for Vue Component" toReformat="false" toShortenFQNames="true">
+    <variable name="API" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CONTROLLER" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="vuecontroller" value="public function show() {&#10;    return view('')&#10;        -&gt;with(compact('data'));&#10;}&#10;&#10;public function get(Request $request) {&#10;    $VAR$Data = $MODEL$::where('application_id', $request-&gt;application_id)-&gt;get();&#10;    return response($VAR$Data, '200');&#10;}&#10;&#10;public function store(Request $request) {&#10;    $this-&gt;validate$MODEL$Request($request);&#10;    $VAR$ = $MODEL$::create($request-&gt;all());&#10;&#10;    return response($VAR$, 200);&#10;}&#10;&#10;public function update($id, Request $request) {&#10;    $VAR$ = $MODEL$::findorfail($id);&#10;    $this-&gt;validate$MODEL$Request($request);&#10;&#10;    $MODEL$::whereId($id)-&gt;update($request-&gt;all());&#10;&#10;    return response($VAR$, 200);&#10;}&#10;&#10;public function delete($id) {&#10;    $VAR$ = $MODEL$::findOrFail($id);&#10;    if($VAR$)&#10;        $VAR$-&gt;delete();&#10;    else&#10;        return response()-&gt;json(error);&#10;    return response('success', 200);&#10;}&#10;&#10;private function validate$MODEL$Request(Request $request) {&#10;    $this-&gt;validate($request, [&#10;        'property_id' =&gt; 'required',&#10;        'bedrooms' =&gt; 'integer|required|max:10|min:0',&#10;        'application_fee' =&gt; 'nullable|numeric|between:0,1000',&#10;        'sample' =&gt; ['required', 'date', new FutureDate]&#10;    ]);&#10;}" description="Vue Controller Functions" toReformat="false" toShortenFQNames="true">
+    <variable name="MODEL" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VAR" expression="concat(&quot;$&quot;,snakeCase(MODEL))" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="vselectstate" value="&lt;div class=&quot;form-group col-12&quot; @click=&quot;errors.clear('state')&quot;&gt;&#10;    &lt;select class=&quot;selectpicker&quot; name=&quot;license_type&quot; data-style=&quot;select-with-transition&quot; title=&quot;State&quot; v-model=&quot;license.state&quot;&gt;&#10;        &lt;option value=&quot;AL&quot;&gt;AL&lt;/option&gt;&#10;        &lt;option value=&quot;AK&quot;&gt;AK&lt;/option&gt;&#10;        &lt;option value=&quot;AZ&quot;&gt;AZ&lt;/option&gt;&#10;        &lt;option value=&quot;AR&quot;&gt;AR&lt;/option&gt;&#10;        &lt;option value=&quot;CA&quot;&gt;CA&lt;/option&gt;&#10;        &lt;option value=&quot;CO&quot;&gt;CO&lt;/option&gt;&#10;        &lt;option value=&quot;CT&quot;&gt;CT&lt;/option&gt;&#10;        &lt;option value=&quot;DE&quot;&gt;DE&lt;/option&gt;&#10;        &lt;option value=&quot;DC&quot;&gt;DC&lt;/option&gt;&#10;        &lt;option value=&quot;FL&quot;&gt;FL&lt;/option&gt;&#10;        &lt;option value=&quot;GA&quot;&gt;GA&lt;/option&gt;&#10;        &lt;option value=&quot;HI&quot;&gt;HI&lt;/option&gt;&#10;        &lt;option value=&quot;ID&quot;&gt;ID&lt;/option&gt;&#10;        &lt;option value=&quot;IL&quot;&gt;IL&lt;/option&gt;&#10;        &lt;option value=&quot;IN&quot;&gt;IN&lt;/option&gt;&#10;        &lt;option value=&quot;IA&quot;&gt;IA&lt;/option&gt;&#10;        &lt;option value=&quot;KS&quot;&gt;KS&lt;/option&gt;&#10;        &lt;option value=&quot;KY&quot;&gt;KY&lt;/option&gt;&#10;        &lt;option value=&quot;LA&quot;&gt;LA&lt;/option&gt;&#10;        &lt;option value=&quot;ME&quot;&gt;ME&lt;/option&gt;&#10;        &lt;option value=&quot;MD&quot;&gt;MD&lt;/option&gt;&#10;        &lt;option value=&quot;MA&quot;&gt;MA&lt;/option&gt;&#10;        &lt;option value=&quot;MI&quot;&gt;MI&lt;/option&gt;&#10;        &lt;option value=&quot;MN&quot;&gt;MN&lt;/option&gt;&#10;        &lt;option value=&quot;MS&quot;&gt;MS&lt;/option&gt;&#10;        &lt;option value=&quot;MO&quot;&gt;MO&lt;/option&gt;&#10;        &lt;option value=&quot;MT&quot;&gt;MT&lt;/option&gt;&#10;        &lt;option value=&quot;NE&quot;&gt;NE&lt;/option&gt;&#10;        &lt;option value=&quot;NV&quot;&gt;NV&lt;/option&gt;&#10;        &lt;option value=&quot;NH&quot;&gt;NH&lt;/option&gt;&#10;        &lt;option value=&quot;NJ&quot;&gt;NJ&lt;/option&gt;&#10;        &lt;option value=&quot;NM&quot;&gt;NM&lt;/option&gt;&#10;        &lt;option value=&quot;NY&quot;&gt;NY&lt;/option&gt;&#10;        &lt;option value=&quot;NC&quot;&gt;NC&lt;/option&gt;&#10;        &lt;option value=&quot;ND&quot;&gt;ND&lt;/option&gt;&#10;        &lt;option value=&quot;OH&quot;&gt;OH&lt;/option&gt;&#10;        &lt;option value=&quot;OK&quot;&gt;OK&lt;/option&gt;&#10;        &lt;option value=&quot;OR&quot;&gt;OR&lt;/option&gt;&#10;        &lt;option value=&quot;PA&quot;&gt;PA&lt;/option&gt;&#10;        &lt;option value=&quot;RI&quot;&gt;RI&lt;/option&gt;&#10;        &lt;option value=&quot;SC&quot;&gt;SC&lt;/option&gt;&#10;        &lt;option value=&quot;SD&quot;&gt;SD&lt;/option&gt;&#10;        &lt;option value=&quot;TN&quot;&gt;TN&lt;/option&gt;&#10;        &lt;option value=&quot;TX&quot;&gt;TX&lt;/option&gt;&#10;        &lt;option value=&quot;UT&quot;&gt;UT&lt;/option&gt;&#10;        &lt;option value=&quot;VT&quot;&gt;VT&lt;/option&gt;&#10;        &lt;option value=&quot;VA&quot;&gt;VA&lt;/option&gt;&#10;        &lt;option value=&quot;WA&quot;&gt;WA&lt;/option&gt;&#10;        &lt;option value=&quot;WV&quot;&gt;WV&lt;/option&gt;&#10;        &lt;option value=&quot;WI&quot;&gt;WI&lt;/option&gt;&#10;        &lt;option value=&quot;WY&quot;&gt;WY&lt;/option&gt;&#10;        &lt;option value=&quot;Other&quot;&gt;Other&lt;/option&gt;&#10;    &lt;/select&gt;&#10;    &lt;div class=&quot;input-error&quot; v-if=&quot;errors.has('state')&quot; v-text=&quot;errors.get('state')&quot;&gt;&lt;/div&gt;&#10;&lt;/div&gt;" description="Vue Select State" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Vue" value="true" />
+    </context>
+  </template>
+  <template name="showsubmit" value="Vue.component('show-$SHOWNAME$', require('./components/$PATH$/$SHOWNAME1$.vue'));&#10;Vue.component('submit-$SUBMITNAME$', require('./components/$PATH$/$SUBMITNAME1$.vue'));" description="Add Vue Components for Show and Submit" toReformat="false" toShortenFQNames="true">
+    <variable name="SHOWNAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PATH" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="SHOWNAME1" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="SUBMITNAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="SUBMITNAME1" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="vuetwocolumns" value="&lt;div&gt;&#10;    &lt;div class=&quot;row&quot;&gt;&#10;        &lt;div class=&quot;col-md-4&quot;&gt;&#10;            &lt;ct-card color=&quot;info&quot; title=&quot;Add $MODEL$&quot;&gt;&#10;                &lt;submit-$KEBAB$ :prop=&quot;?&quot; type=&quot;post&quot;&gt;&lt;/submit-$KEBAB$&gt;&#10;            &lt;/ct-card&gt;&#10;        &lt;/div&gt;&#10;&#10;        &lt;div class=&quot;col-md-8&quot;&gt;&#10;            &lt;ct-card color=&quot;info&quot; title=&quot;Your $MODEL$&quot;&gt;&#10;                &lt;show-$KEBAB$ :prop=&quot;?&quot;&gt;&lt;/show-$KEBAB$&gt;&#10;            &lt;/ct-card&gt;&#10;        &lt;/div&gt;&#10;    &lt;/div&gt;&#10;    &lt;div class=&quot;row&quot;&gt;&#10;        &lt;div class=&quot;col-md-12&quot;&gt;&#10;            &lt;button class=&quot;btn btn-primary btn-block btn-lg&quot;&gt;Move to next page&lt;/button&gt;&#10;        &lt;/div&gt;&#10;    &lt;/div&gt;&#10;&lt;/div&gt;" description="Two Columns to Show and Submit Vue Data" toReformat="false" toShortenFQNames="true">
+    <variable name="MODEL" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="KEBAB" expression="lowercaseAndDash(MODEL)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="castdate" value="protected $casts = [&#10;    '$date$' =&gt; 'datetime:Y-m-d'&#10;];" description="Cast Datetime to Date" toReformat="false" toShortenFQNames="true">
+    <variable name="date" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="protecteddates" value="protected $dates = [$FIELD$, 'created_at', 'updated_at'];$END$" description="Protected Dates for Model" toReformat="false" toShortenFQNames="true">
+    <variable name="FIELD" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="vformdate" value="&lt;!-- Form $NAME$ Input --&gt;&#10;&lt;div class=&quot;form-group label-floating bmd-form-group col-md-$SIZE$&quot; @click=&quot;errors.clear('$SNAKE$')&quot;&gt;&#10;    &lt;label for=&quot;$SNAKE$&quot; class=&quot;label-control bmd-label-static&quot;&gt;$NAME$&lt;/label&gt;&#10;    &lt;input type=&quot;date&quot; id=&quot;$SNAKE$&quot; name=&quot;$SNAKE$&quot; class=&quot;form-control datetimepicker&quot; value=&quot;&quot; v-model=&quot;$MODEL$.$SNAKE$&quot;/&gt;&#10;    &lt;div class=&quot;input-error&quot; v-if=&quot;errors.has('$SNAKE$')&quot; v-text=&quot;errors.get('$SNAKE$')&quot;&gt;&lt;/div&gt;&#10;&lt;/div&gt;" description="Vue Form Date" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="MODEL" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="SIZE" expression="" defaultValue="&quot;6&quot;" alwaysStopAt="true" />
+    <variable name="SNAKE" expression="snakeCase(NAME)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="Vue" value="true" />
+    </context>
+  </template>
+  <template name="vformradio" value="&lt;!-- $FIELD$ Radio Input --&gt;&#10;&lt;div class=&quot;form-row align-content-center&quot;&gt;&#10;    &lt;div class=&quot;col-md-6&quot; style=&quot;margin-bottom: .5em;&quot;&gt;&#10;        &lt;div&gt;$QUESTION$&lt;/div&gt;&#10;        &lt;div class=&quot;input-error&quot; v-if=&quot;errors.has('$SNAKE$')&quot; v-text=&quot;errors.get('$SNAKE$')&quot;&gt;&lt;/div&gt;&#10;    &lt;/div&gt;&#10;    &lt;div class=&quot;col-md-6 d-flex justify-content-around&quot;&gt;&#10;        &lt;div class=&quot;form-check form-check-radio form-check-inline&quot;&gt;&#10;            &lt;label class=&quot;form-check-label&quot;&gt;&#10;                &lt;input class=&quot;form-check-input&quot; type=&quot;radio&quot; name=&quot;$SNAKE$&quot; id=&quot;$SNAKE$1&quot; value=&quot;1&quot; required v-model=&quot;$MODEL$.$SNAKE$&quot;&gt; Yes&#10;                &lt;span class=&quot;circle&quot;&gt;&#10;                                    &lt;span class=&quot;check&quot;&gt;&lt;/span&gt;&#10;                                &lt;/span&gt;&#10;            &lt;/label&gt;&#10;        &lt;/div&gt;&#10;        &lt;div class=&quot;form-check form-check-radio form-check-inline&quot;&gt;&#10;            &lt;label class=&quot;form-check-label&quot;&gt;&#10;                &lt;input class=&quot;form-check-input&quot; type=&quot;radio&quot; name=&quot;$SNAKE$&quot; id=&quot;$SNAKE$2&quot; value=&quot;0&quot; v-model=&quot;$MODEL$.$SNAKE$&quot;&gt; No&#10;                &lt;span class=&quot;circle&quot;&gt;&#10;                                    &lt;span class=&quot;check&quot;&gt;&lt;/span&gt;&#10;                                &lt;/span&gt;&#10;            &lt;/label&gt;&#10;        &lt;/div&gt;&#10;    &lt;/div&gt;&#10;&lt;/div&gt;" description="Radio (Yes No) for Vue Forms" toReformat="false" toShortenFQNames="true">
+    <variable name="FIELD" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="QUESTION" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="MODEL" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="SNAKE" expression="snakeCase(FIELD)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="Vue" value="true" />
+    </context>
+  </template>
+  <template name="xtable" value="&lt;x-table :datatables=&quot;$TRUE$&quot; table-id=&quot;$ID$&quot; :show-search=&quot;$FALSE$&quot; :table-hover=&quot;$TRUE1$&quot;&gt;&#10;    $END$&#10;&lt;/x-table&gt;" description="Blade X Table Component" toReformat="false" toShortenFQNames="true">
+    <variable name="TRUE" expression="" defaultValue="&quot;true&quot;" alwaysStopAt="true" />
+    <variable name="ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="FALSE" expression="" defaultValue="&quot;false&quot;" alwaysStopAt="true" />
+    <variable name="TRUE1" expression="" defaultValue="&quot;true&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="validate" value="$this-&gt;validate(request(), [&#10;    '$VAR$' =&gt; '$RULES$'$END$&#10;]);" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="RULES" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="xcard" value="&lt;x-card title=&quot;$TITLE$&quot; color=&quot;$COLOR$&quot;&gt;&#10;    $END$&#10;&lt;/x-card&gt;" description="Add a card" toReformat="false" toShortenFQNames="true">
+    <variable name="TITLE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="COLOR" expression="" defaultValue="&quot;info&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="formdate" value="&lt;!-- $VALUE$ Form Input --&gt;&#10;&lt;div class=&quot;form-group col-md-$SIZE$ date&quot;&gt;&#10;    {!! Form::label('$NAME$', '$VALUE$', ['class' =&gt; 'bmd-label-floating']) !!}&#10;    {!! Form::text('$NAME$', $NULL$, ['class' =&gt; 'form-control datepicker $CLASS$', 'id' =&gt; '$NAME$' $REQUIRED$ $OTHER$]) !!}&#10;&lt;/div&gt;$END$" description="Form Date" toReformat="false" toShortenFQNames="true">
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="SIZE" expression="" defaultValue="&quot;6&quot;" alwaysStopAt="true" />
+    <variable name="NAME" expression="snakeCase(VALUE)" defaultValue="" alwaysStopAt="false" />
+    <variable name="NULL" expression="" defaultValue="&quot;null&quot;" alwaysStopAt="true" />
+    <variable name="CLASS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="REQUIRED" expression="" defaultValue="&quot;, 'required'&quot;" alwaysStopAt="true" />
+    <variable name="OTHER" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="dbtransaction" value="DB::transaction(function() {&#10;    $END$&#10;});" description="Start a DB Transaction" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="helper" value="if (! function_exists('$NAME$')) {&#10;    function $NAME$($VAR$){&#10;        $END$&#10;    }&#10;}" description="Helper Template" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="store" value="public function store(Request $request $VAR$)&#10;{&#10;    $END$&#10;}" description="Store controller method" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="rget" value="Route::get('$ROUTE$', [\App\Http\Controllers\$CONTROLLER$::class, '$METHOD$']);" description="Get Route (web)" toReformat="false" toShortenFQNames="true">
+    <variable name="ROUTE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CONTROLLER" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="METHOD" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="rpost" value="Route::post('$ROUTE$', [\App\Http\Controllers\$CONTROLLER$::class, '$METHOD$']);" description="Post Route" toReformat="false" toShortenFQNames="true">
+    <variable name="ROUTE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CONTROLLER" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="METHOD" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="@fe" value="@foreach($VAR$ as $VAR2$)&#10;    $END$&#10;@endforeach" description="Blade foreach" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VAR2" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+</templateSet>

@@ -1,0 +1,49 @@
+<keymap version="1" name="Kevin Workflow" parent="Mac OS X 10.5+">
+  <action id="ChangesView.Diff" />
+  <action id="ChangesView.GroupBy.Directory" />
+  <action id="CompareTwoFiles" />
+  <action id="Console.TableResult.Reload" />
+  <action id="DatabaseView.PropertiesAction" />
+  <action id="Diff.ShowDiff" />
+  <action id="Diff.ShowSettingsPopup" />
+  <action id="EditorDuplicate" />
+  <action id="FileChooser.GotoDesktop" />
+  <action id="FileChooser.TogglePathShowing" />
+  <action id="FileStructurePopup">
+    <keyboard-shortcut first-keystroke="meta i" />
+  </action>
+  <action id="FindNext" />
+  <action id="Git.Branches">
+    <keyboard-shortcut first-keystroke="meta b" />
+  </action>
+  <action id="GotoDeclaration">
+    <mouse-shortcut keystroke="meta button1" />
+    <mouse-shortcut keystroke="button2" />
+  </action>
+  <action id="GotoFile">
+    <keyboard-shortcut first-keystroke="meta p" />
+  </action>
+  <action id="GotoTest" />
+  <action id="Images.ShowThumbnails" />
+  <action id="ParameterInfo" />
+  <action id="Refresh" />
+  <action id="Replace" />
+  <action id="Rerun" />
+  <action id="RunClass">
+    <keyboard-shortcut first-keystroke="shift meta t" />
+  </action>
+  <action id="RunDashboard.CopyConfiguration" />
+  <action id="RunDashboard.ShowConfigurations" />
+  <action id="SelectAllOccurrences">
+    <keyboard-shortcut first-keystroke="shift meta d" />
+  </action>
+  <action id="SelectNextOccurrence">
+    <keyboard-shortcut first-keystroke="meta d" />
+  </action>
+  <action id="SendEOF" />
+  <action id="Uml.ShowDiff" />
+  <action id="Vcs.Log.Refresh" />
+  <action id="XDebugger.CopyWatch" />
+  <action id="hg4idea.QRefresh" />
+  <action id="openAssertEqualsDiff" />
+</keymap>
