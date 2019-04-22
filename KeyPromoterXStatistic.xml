@@ -73,6 +73,14 @@
           <Count>14</Count>
         </Item>
       </Statistic>
+      <Statistic Action="Refresh">
+        <Item>
+          <IdeaActionID>FileChooser.Refresh</IdeaActionID>
+          <ShortCut>'⌥⌘Y'</ShortCut>
+          <Description>Refresh</Description>
+          <Count>1</Count>
+        </Item>
+      </Statistic>
       <Statistic Action="Rename...">
         <Item>
           <IdeaActionID>RenameElement</IdeaActionID>
@@ -87,6 +95,14 @@
           <ShortCut>'⌃⇧R'</ShortCut>
           <Description>Run 'a_housing_locator_ad...'</Description>
           <Count>3</Count>
+        </Item>
+      </Statistic>
+      <Statistic Action="Show All Affected Files">
+        <Item>
+          <IdeaActionID>Vcs.Log.ShowAllAffected</IdeaActionID>
+          <ShortCut>'⌃⌘A'</ShortCut>
+          <Description>Show All Affected Files</Description>
+          <Count>1</Count>
         </Item>
       </Statistic>
       <Statistic Action="Toggle Line Breakpoint">
