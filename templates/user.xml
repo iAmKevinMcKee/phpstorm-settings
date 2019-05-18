@@ -428,4 +428,10 @@
       <option name="HTML" value="true" />
     </context>
   </template>
+  <template name="localscope" value="public function scope$VAR$($query)&#10;{&#10;    return $query-&gt;$END$&#10;}" description="Laravel Local Scope" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
 </templateSet>
