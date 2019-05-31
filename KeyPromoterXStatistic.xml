@@ -105,6 +105,14 @@
           <Count>3</Count>
         </Item>
       </Statistic>
+      <Statistic Action="Run Command...">
+        <Item>
+          <IdeaActionID>com.jetbrains.php.framework.FrameworkRunConsoleAction</IdeaActionID>
+          <ShortCut>'⇧⌘X'</ShortCut>
+          <Description>Run Command...</Description>
+          <Count>1</Count>
+        </Item>
+      </Statistic>
       <Statistic Action="Show All Affected Files">
         <Item>
           <IdeaActionID>Vcs.Log.ShowAllAffected</IdeaActionID>
