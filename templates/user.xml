@@ -399,12 +399,6 @@
       <option name="PHP" value="true" />
     </context>
   </template>
-  <template name="store" value="public function store(Request $request $VAR$)&#10;{&#10;    $END$&#10;}" description="Store controller method" toReformat="false" toShortenFQNames="true">
-    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
-    <context>
-      <option name="PHP" value="true" />
-    </context>
-  </template>
   <template name="rget" value="Route::get('$ROUTE$', [\App\Http\Controllers\$CONTROLLER$::class, '$METHOD$']);" description="Get Route (web)" toReformat="false" toShortenFQNames="true">
     <variable name="ROUTE" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="CONTROLLER" expression="" defaultValue="" alwaysStopAt="true" />
