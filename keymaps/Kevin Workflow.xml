@@ -1,6 +1,9 @@
 <keymap version="1" name="Kevin Workflow" parent="Mac OS X 10.5+">
   <action id="ChangesView.Diff" />
   <action id="ChangesView.GroupBy.Directory" />
+  <action id="CloseActiveTab">
+    <keyboard-shortcut first-keystroke="shift meta w" />
+  </action>
   <action id="CompareTwoFiles" />
   <action id="Console.TableResult.Reload" />
   <action id="DatabaseView.PropertiesAction" />
@@ -28,9 +31,11 @@
   <action id="ParameterInfo" />
   <action id="Refresh" />
   <action id="Replace" />
-  <action id="Rerun" />
-  <action id="RunClass">
+  <action id="Rerun">
     <keyboard-shortcut first-keystroke="shift meta t" />
+  </action>
+  <action id="RunClass">
+    <keyboard-shortcut first-keystroke="meta t" />
   </action>
   <action id="RunDashboard.CopyConfiguration" />
   <action id="RunDashboard.ShowConfigurations" />
@@ -43,6 +48,7 @@
   <action id="SendEOF" />
   <action id="Uml.ShowDiff" />
   <action id="Vcs.Log.Refresh" />
+  <action id="Vcs.UpdateProject" />
   <action id="XDebugger.CopyWatch" />
   <action id="hg4idea.QRefresh" />
   <action id="openAssertEqualsDiff" />
