@@ -113,6 +113,14 @@
           <Count>2</Count>
         </Item>
       </Statistic>
+      <Statistic Action="Run 'CaseManagerTest.a_case_manager_can_search_properties'">
+        <Item>
+          <IdeaActionID>Run</IdeaActionID>
+          <ShortCut>'⌃R'</ShortCut>
+          <Description>Run 'CaseManagerTest.a_case_manager_can_search_properties'</Description>
+          <Count>1</Count>
+        </Item>
+      </Statistic>
       <Statistic Action="Run 'Full Suite'">
         <Item>
           <IdeaActionID>Run</IdeaActionID>
