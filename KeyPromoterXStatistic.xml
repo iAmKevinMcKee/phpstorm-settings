@@ -145,6 +145,14 @@
           <Count>3</Count>
         </Item>
       </Statistic>
+      <Statistic Action="Run 'testExample'">
+        <Item>
+          <IdeaActionID>RunClass</IdeaActionID>
+          <ShortCut>'⌘T'</ShortCut>
+          <Description>Run 'testExample'</Description>
+          <Count>1</Count>
+        </Item>
+      </Statistic>
       <Statistic Action="Run Command...">
         <Item>
           <IdeaActionID>com.jetbrains.php.framework.FrameworkRunConsoleAction</IdeaActionID>
