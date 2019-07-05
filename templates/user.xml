@@ -428,4 +428,11 @@
       <option name="PHP" value="true" />
     </context>
   </template>
+  <template name="hls" value="&lt;x-hls&gt;$CONTENT$&lt;/x-hls&gt;$END$" description="Add HLS Row to Docs" toReformat="false" toShortenFQNames="true">
+    <variable name="CONTENT" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
 </templateSet>
