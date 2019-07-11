@@ -359,7 +359,7 @@
       <option name="PHP" value="true" />
     </context>
   </template>
-  <template name="validate" value="$this-&gt;validate(request(), [&#10;    '$VAR$' =&gt; '$RULES$'$END$&#10;]);" description="" toReformat="false" toShortenFQNames="true">
+  <template name="validate" value="$validatedData = $request-&gt;validate([&#10;    '$VAR$' =&gt; '$RULES$'$END$&#10;]);" description="" toReformat="false" toShortenFQNames="true">
     <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="RULES" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
