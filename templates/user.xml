@@ -359,7 +359,7 @@
       <option name="PHP" value="true" />
     </context>
   </template>
-  <template name="validate" value="$this-&gt;validate(request(), [&#10;    '$VAR$' =&gt; '$RULES$'$END$&#10;]);" description="" toReformat="false" toShortenFQNames="true">
+  <template name="validate" value="$validatedData = $request-&gt;validate([&#10;    '$VAR$' =&gt; '$RULES$'$END$&#10;]);" description="" toReformat="false" toShortenFQNames="true">
     <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="RULES" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
@@ -399,12 +399,6 @@
       <option name="PHP" value="true" />
     </context>
   </template>
-  <template name="store" value="public function store(Request $request $VAR$)&#10;{&#10;    $END$&#10;}" description="Store controller method" toReformat="false" toShortenFQNames="true">
-    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
-    <context>
-      <option name="PHP" value="true" />
-    </context>
-  </template>
   <template name="rget" value="Route::get('$ROUTE$', [\App\Http\Controllers\$CONTROLLER$::class, '$METHOD$']);" description="Get Route (web)" toReformat="false" toShortenFQNames="true">
     <variable name="ROUTE" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="CONTROLLER" expression="" defaultValue="" alwaysStopAt="true" />
@@ -431,6 +425,13 @@
   <template name="localscope" value="public function scope$VAR$($query)&#10;{&#10;    return $query-&gt;$END$&#10;}" description="Laravel Local Scope" toReformat="false" toShortenFQNames="true">
     <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="hls" value="&lt;x-hls&gt;$CONTENT$&lt;/x-hls&gt;$END$" description="Add HLS Row to Docs" toReformat="false" toShortenFQNames="true">
+    <variable name="CONTENT" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
       <option name="PHP" value="true" />
     </context>
   </template>
