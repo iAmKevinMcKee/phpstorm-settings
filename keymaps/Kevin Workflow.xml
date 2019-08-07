@@ -10,6 +10,10 @@
   <action id="Diff.ShowDiff" />
   <action id="Diff.ShowSettingsPopup" />
   <action id="EditorDuplicate" />
+  <action id="EditorTab" />
+  <action id="EmacsStyleIndent">
+    <keyboard-shortcut first-keystroke="tab" />
+  </action>
   <action id="FileChooser.GotoDesktop" />
   <action id="FileChooser.TogglePathShowing" />
   <action id="FileStructurePopup">
