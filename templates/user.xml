@@ -435,4 +435,14 @@
       <option name="PHP" value="true" />
     </context>
   </template>
+  <template name="vformselect" value="&lt;!-- $NAME$ Form Input --&gt;&#10;&lt;div class=&quot;form-group bmd-form-group $BS$&quot;&gt;&#10;    &lt;select v-model=&quot;$MODEL$.$NAME2$&quot; id=&quot;$NAME2$&quot; name=&quot;$NAME2$&quot; class=&quot;form-control selectpicker&quot; title=&quot;Choose $NAME$&quot; required data-live-search=&quot;true&quot; data-style=&quot;select-with-transition&quot; &gt;&#10;        &lt;option value=&quot;&quot;&gt;Choose $NAME$&lt;/option&gt;&#10;        &lt;option v-for=&quot;(value, key) in this.$OPTIONS$&quot; v-bind:value=&quot;key&quot;&gt;{{ value }}&lt;/option&gt;&#10;    &lt;/select&gt;&#10;    &lt;div class=&quot;input-error&quot; v-if=&quot;errors.has('$NAME2$')&quot; v-text=&quot;errors.get('$NAME2$')&quot;&gt;&lt;/div&gt;&#10;&lt;/div&gt;$END$" description="Vue Selectpicker" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="MODEL" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="NAME2" expression="snakeCase(NAME)" defaultValue="" alwaysStopAt="false" />
+    <variable name="OPTIONS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="BS" expression="" defaultValue="&quot;col-md-6&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="Vue" value="true" />
+    </context>
+  </template>
 </templateSet>
