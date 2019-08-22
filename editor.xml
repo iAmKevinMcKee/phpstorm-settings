@@ -23,4 +23,5 @@
     </option>
     <option name="SHOW_BREADCRUMBS" value="false" />
   </component>
+  <component name="LiveEditOptions" chromeUpdateJSOnChanges="true" restartIfHotSwapFailed="true" />
 </application>
