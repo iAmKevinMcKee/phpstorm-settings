@@ -8,18 +8,17 @@
   </component>
   <component name="PhpInterpreters">
     <interpreters>
-      <interpreter id="58145d49-4451-4e09-988f-aa675dc8827a" name="PHP 7.2" home="/usr/local/bin/php@7.2" debugger_id="php.debugger.XDebug" />
-      <interpreter id="c14d138c-cb19-43c4-b7c5-037e5525e43f" name="PHP@7.2" home="/usr/local/Cellar/php@7.2/7.2.21/bin/php" debugger_id="php.debugger.XDebug" />
+      <interpreter id="58145d49-4451-4e09-988f-aa675dc8827a" name="PHP 7.2" home="/usr/local/Cellar/php@7.2/7.2.24/bin/php" debugger_id="php.debugger.XDebug" />
     </interpreters>
   </component>
   <component name="PhpInterpretersPhpInfoCache">
     <phpInfoCache>
-      <interpreter name="PHP@7.2">
-        <phpinfo binary_type="PHP" php_cgi="/usr/local/Cellar/php@7.2/7.2.21/bin/php-cgi" php_cli="/usr/local/Cellar/php@7.2/7.2.21/bin/php" path_separator=":" version="7.2.21">
+      <interpreter name="PHP 7.2">
+        <phpinfo binary_type="PHP" php_cgi="/usr/local/Cellar/php@7.2/7.2.24/bin/php-cgi" php_cli="/usr/local/Cellar/php@7.2/7.2.24/bin/php" path_separator=":" version="7.2.24">
           <additional_php_ini>/usr/local/etc/php/7.2/conf.d/ext-opcache.ini, /usr/local/etc/php/7.2/conf.d/php-memory-limits.ini</additional_php_ini>
           <configuration_file>/usr/local/etc/php/7.2/php.ini</configuration_file>
           <configuration_options>
-            <configuration_option name="include_path" value=".:/usr/local/Cellar/php@7.2/7.2.21/share/php@7.2/pear" />
+            <configuration_option name="include_path" value=".:/usr/local/Cellar/php@7.2/7.2.24/share/php@7.2/pear" />
           </configuration_options>
           <debuggers />
           <loaded_extensions>
