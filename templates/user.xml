@@ -445,4 +445,13 @@
       <option name="Vue" value="true" />
     </context>
   </template>
+  <template name="lwselect" value="&lt;select name=&quot;$MODEL$&quot; id=&quot;select_$MODEL$&quot; class=&quot;form-control selectpicker&quot; title=&quot;$TITLE$&quot; data-live-search=&quot;true&quot;&#10;    data-style=&quot;select-with-transition&quot;&#10;    data-size=&quot;5&quot; wire:model=&quot;$MODEL$&quot;&gt;&#10;@foreach($this-&gt;$OPTIONS$ as $key =&gt; $value)&#10;    &lt;option value=&quot;{{$key}}&quot; @if($key == $this-&gt;$MODEL$) selected @endif&gt;{{$value}}&lt;/option&gt;&#10;@endforeach&#10;&lt;/select&gt;" description="Livewire Select" toReformat="false" toShortenFQNames="true">
+    <variable name="MODEL" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="OPTIONS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="TITLE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
 </templateSet>
