@@ -64,16 +64,6 @@
       <option name="VUE_SCRIPT" value="true" />
     </context>
   </template>
-  <template name="@card" value="@card(['type' =&gt; '$TYPE$', 'color' =&gt; 'info', 'title' =&gt; '$TITLE$' , $SUBTITLE$$ICON$])&#10;    $END$&#10;@endcard" description="Intellow Custom Card" toReformat="false" toShortenFQNames="true">
-    <variable name="TYPE" expression="" defaultValue="&quot;text or icon&quot;" alwaysStopAt="true" />
-    <variable name="TITLE" expression="" defaultValue="&quot;title&quot;" alwaysStopAt="true" />
-    <variable name="SUBTITLE" expression="" defaultValue="&quot;'subtitle' =&gt; '&quot;" alwaysStopAt="true" />
-    <variable name="ICON" expression="" defaultValue="&quot;'icon' =&gt; '&quot;" alwaysStopAt="true" />
-    <context>
-      <option name="HTML" value="true" />
-      <option name="PHP" value="true" />
-    </context>
-  </template>
   <template name="formopen" value="{!! Form::open(['action' =&gt; '$CONTROLLERMETHOD$','method' =&gt; '$TYPE$']) !!}&#10;    $END$&#10;{!! Form::close() !!}" description="Laravel Collective Form Open" toReformat="true" toShortenFQNames="true">
     <variable name="CONTROLLERMETHOD" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="TYPE" expression="" defaultValue="&quot;POST&quot;" alwaysStopAt="true" />
@@ -108,16 +98,6 @@
     <variable name="SLUG2" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="LINK" expression="" defaultValue="&quot;Words in Sidebar&quot;" alwaysStopAt="true" />
     <variable name="LETTER" expression="" defaultValue="" alwaysStopAt="true" />
-    <context>
-      <option name="HTML" value="true" />
-      <option name="PHP" value="true" />
-    </context>
-  </template>
-  <template name="@table" value="@table(['striped' =&gt; $STRIPED$, 'datatables' =&gt; $DATATABLES$, 'table_id' =&gt; '$ID$', 'table_hover' =&gt; '$TABLEHOVER$' ])&#10;    $END$&#10;@endtable" description="Table" toReformat="false" toShortenFQNames="true">
-    <variable name="STRIPED" expression="" defaultValue="&quot;true&quot;" alwaysStopAt="true" />
-    <variable name="DATATABLES" expression="" defaultValue="&quot;true&quot;" alwaysStopAt="true" />
-    <variable name="ID" expression="" defaultValue="" alwaysStopAt="true" />
-    <variable name="TABLEHOVER" expression="" defaultValue="&quot;table-hover&quot;" alwaysStopAt="true" />
     <context>
       <option name="HTML" value="true" />
       <option name="PHP" value="true" />
@@ -458,6 +438,13 @@
     <context>
       <option name="HTML" value="true" />
       <option name="JAVA_SCRIPT" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="@if" value="@if($EXPRESSION$)&#10;    $END$&#10;@endif" description="Blade if" toReformat="false" toShortenFQNames="true">
+    <variable name="EXPRESSION" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
       <option name="PHP" value="true" />
     </context>
   </template>
