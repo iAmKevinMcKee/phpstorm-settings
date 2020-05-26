@@ -1,0 +1,42 @@
+<application>
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="accca92c-2cb7-4cd7-b45e-9d37838de7a3" name="Claims" url="http://claims.test">
+        <fileTransfer port="0" accessType="LOCAL" />
+      </webServer>
+      <webServer id="2db5ebbc-e5c8-4eec-95b1-704af1579900" name="Sample" url="http://sample.test">
+        <fileTransfer port="0" accessType="LOCAL" />
+      </webServer>
+      <webServer id="a5c837c1-23e9-4350-8f8d-7a8aa8112e62" name="Rentable" url="http://rentable.test">
+        <fileTransfer port="0" accessType="LOCAL" />
+      </webServer>
+      <webServer id="93d0ab53-be02-44b7-9891-4ddcf9a9d276" name="Homfinder" url="http://homfinder.test">
+        <fileTransfer port="0" accessType="LOCAL" />
+      </webServer>
+      <webServer id="fcbe4969-4af5-44a1-81fb-6ab02c769895" name="NovaTest" url="http://novatest.test">
+        <fileTransfer port="0" accessType="LOCAL" />
+      </webServer>
+      <webServer id="40eedd81-16d0-463f-bffe-904a8e7869dc" name="Drive" url="http://drive.test">
+        <fileTransfer port="0" accessType="LOCAL" />
+      </webServer>
+      <webServer id="7b48f3a8-adc8-4e15-ba0e-46d760d05dfe" name="Boilerplate" url="http://boilerplate.test">
+        <fileTransfer port="0" accessType="LOCAL" />
+      </webServer>
+      <webServer id="09dd9732-61a2-441d-8f30-1494685a1d03" name="Drive2" url="http://drive2.test">
+        <fileTransfer port="0" accessType="LOCAL" />
+      </webServer>
+      <webServer id="d3e82b72-39b8-4c49-86c9-a35b5de434b1" name="Timetracker" url="http://timetracker.test">
+        <fileTransfer port="0" accessType="LOCAL" />
+      </webServer>
+      <webServer id="a2a184f4-70da-42e7-9c94-8299fda8a661" name="Homfinder2" url="http://homfinder2.test">
+        <fileTransfer port="0" accessType="LOCAL" />
+      </webServer>
+      <webServer id="71dbb776-9c08-44ad-b695-482b6602e5fd" name="Brew" url="http://brew.test">
+        <fileTransfer port="0" accessType="LOCAL" />
+      </webServer>
+      <webServer id="635c0c49-40d4-4530-8a44-ddbcb7c6cf52" name="Padmission" url="http://padmission.test">
+        <fileTransfer port="0" accessType="LOCAL" />
+      </webServer>
+    </option>
+  </component>
+</application>
