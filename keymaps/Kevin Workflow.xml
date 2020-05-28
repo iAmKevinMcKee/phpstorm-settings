@@ -29,6 +29,9 @@
   <action id="GotoTest" />
   <action id="Images.ShowThumbnails" />
   <action id="ParameterInfo" />
+  <action id="ProductivityGuide">
+    <keyboard-shortcut first-keystroke="ctrl meta alt p" />
+  </action>
   <action id="Refresh" />
   <action id="Replace" />
   <action id="Rerun">
