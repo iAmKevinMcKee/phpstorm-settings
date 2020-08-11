@@ -24,6 +24,9 @@
   <action id="EditorCloneCaretBelow">
     <keyboard-shortcut first-keystroke="meta alt down" />
   </action>
+  <action id="EditorDown">
+    <keyboard-shortcut first-keystroke="down" />
+  </action>
   <action id="EditorDuplicate">
     <keyboard-shortcut first-keystroke="meta l" />
   </action>
@@ -87,7 +90,7 @@
   </action>
   <action id="SendEOF" />
   <action id="SplitVertically">
-    <keyboard-shortcut first-keystroke="shift meta v" />
+    <keyboard-shortcut first-keystroke="ctrl n" />
   </action>
   <action id="Uml.ShowDiff" />
   <action id="Vcs.Log.FocusTextFilter" />
