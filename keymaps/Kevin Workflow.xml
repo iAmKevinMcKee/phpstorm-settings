@@ -9,6 +9,8 @@
     <keyboard-shortcut first-keystroke="shift meta w" />
   </action>
   <action id="CompareTwoFiles" />
+  <action id="Console.TableResult.NextPage" />
+  <action id="Console.TableResult.PreviousPage" />
   <action id="Console.TableResult.Reload" />
   <action id="DatabaseView.PropertiesAction" />
   <action id="Diff.PrevChange">
@@ -16,6 +18,12 @@
   </action>
   <action id="Diff.ShowDiff" />
   <action id="Diff.ShowSettingsPopup" />
+  <action id="EditorCloneCaretAbove">
+    <keyboard-shortcut first-keystroke="meta alt up" />
+  </action>
+  <action id="EditorCloneCaretBelow">
+    <keyboard-shortcut first-keystroke="meta alt down" />
+  </action>
   <action id="EditorDuplicate">
     <keyboard-shortcut first-keystroke="meta l" />
   </action>
@@ -51,8 +59,10 @@
   <action id="GotoLine" />
   <action id="GotoTest" />
   <action id="Images.ShowThumbnails" />
+  <action id="NextOccurence" />
   <action id="ParameterInfo" />
   <action id="PasteMultiple" />
+  <action id="PreviousOccurence" />
   <action id="PreviousTab">
     <keyboard-shortcut first-keystroke="ctrl left" />
   </action>
