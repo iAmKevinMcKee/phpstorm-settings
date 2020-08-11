@@ -1,4 +1,8 @@
 <keymap version="1" name="Kevin Workflow" parent="Mac OS X 10.5+">
+  <action id="Back">
+    <keyboard-shortcut first-keystroke="meta alt left" />
+    <mouse-shortcut keystroke="button4" />
+  </action>
   <action id="ChangesView.Diff" />
   <action id="ChangesView.GroupBy.Directory" />
   <action id="CloseActiveTab">
@@ -7,15 +11,33 @@
   <action id="CompareTwoFiles" />
   <action id="Console.TableResult.Reload" />
   <action id="DatabaseView.PropertiesAction" />
+  <action id="Diff.PrevChange">
+    <keyboard-shortcut first-keystroke="ctrl left" />
+  </action>
   <action id="Diff.ShowDiff" />
   <action id="Diff.ShowSettingsPopup" />
-  <action id="EditorDuplicate" />
+  <action id="EditorDuplicate">
+    <keyboard-shortcut first-keystroke="meta l" />
+  </action>
+  <action id="EditorIndentLineOrSelection">
+    <keyboard-shortcut first-keystroke="meta close_bracket" />
+  </action>
+  <action id="EditorUnindentSelection">
+    <keyboard-shortcut first-keystroke="meta open_bracket" />
+  </action>
+  <action id="ExpandRegion">
+    <keyboard-shortcut first-keystroke="shift meta open_bracket" />
+  </action>
   <action id="FileChooser.GotoDesktop" />
   <action id="FileChooser.TogglePathShowing" />
   <action id="FileStructurePopup">
     <keyboard-shortcut first-keystroke="meta i" />
   </action>
   <action id="FindNext" />
+  <action id="Forward">
+    <keyboard-shortcut first-keystroke="meta alt right" />
+    <mouse-shortcut keystroke="button5" />
+  </action>
   <action id="Git.Branches">
     <keyboard-shortcut first-keystroke="meta b" />
   </action>
@@ -26,10 +48,14 @@
   <action id="GotoFile">
     <keyboard-shortcut first-keystroke="meta p" />
   </action>
+  <action id="GotoLine" />
   <action id="GotoTest" />
   <action id="Images.ShowThumbnails" />
   <action id="ParameterInfo" />
   <action id="PasteMultiple" />
+  <action id="PreviousTab">
+    <keyboard-shortcut first-keystroke="ctrl left" />
+  </action>
   <action id="ProductivityGuide">
     <keyboard-shortcut first-keystroke="ctrl meta alt p" />
   </action>
@@ -54,6 +80,7 @@
     <keyboard-shortcut first-keystroke="shift meta v" />
   </action>
   <action id="Uml.ShowDiff" />
+  <action id="Vcs.Log.FocusTextFilter" />
   <action id="Vcs.Log.Refresh" />
   <action id="Vcs.UpdateProject" />
   <action id="XDebugger.CopyWatch" />
