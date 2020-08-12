@@ -52,6 +52,9 @@
   <action id="EditorIndentLineOrSelection">
     <keyboard-shortcut first-keystroke="meta close_bracket" />
   </action>
+  <action id="EditorJoinLines">
+    <keyboard-shortcut first-keystroke="meta j" />
+  </action>
   <action id="EditorUnindentSelection">
     <keyboard-shortcut first-keystroke="meta open_bracket" />
   </action>
@@ -94,6 +97,7 @@
     <keyboard-shortcut first-keystroke="meta add" />
   </action>
   <action id="Images.ShowThumbnails" />
+  <action id="InsertLiveTemplate" />
   <action id="NextOccurence" />
   <action id="ParameterInfo" />
   <action id="PasteMultiple" />
