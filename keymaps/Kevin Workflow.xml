@@ -52,9 +52,7 @@
   <action id="EditorIndentLineOrSelection">
     <keyboard-shortcut first-keystroke="meta close_bracket" />
   </action>
-  <action id="EditorJoinLines">
-    <keyboard-shortcut first-keystroke="meta j" />
-  </action>
+  <action id="EditorJoinLines" />
   <action id="EditorUnindentSelection">
     <keyboard-shortcut first-keystroke="meta open_bracket" />
   </action>
@@ -99,8 +97,14 @@
   <action id="Images.ShowThumbnails" />
   <action id="InsertLiveTemplate" />
   <action id="NextOccurence" />
+  <action id="NextSplitter">
+    <keyboard-shortcut first-keystroke="meta j" second-keystroke="meta p" />
+  </action>
   <action id="ParameterInfo" />
   <action id="PasteMultiple" />
+  <action id="PrevSplitter">
+    <keyboard-shortcut first-keystroke="meta j" second-keystroke="meta o" />
+  </action>
   <action id="PreviousOccurence" />
   <action id="PreviousTab">
     <keyboard-shortcut first-keystroke="ctrl left" />
@@ -129,10 +133,12 @@
   </action>
   <action id="SendEOF" />
   <action id="SplitVertically">
-    <keyboard-shortcut first-keystroke="ctrl n" />
-    <keyboard-shortcut first-keystroke="meta k" second-keystroke="meta n" />
+    <keyboard-shortcut first-keystroke="meta j" second-keystroke="meta s" />
   </action>
   <action id="Uml.ShowDiff" />
+  <action id="Unsplit">
+    <keyboard-shortcut first-keystroke="shift meta j" second-keystroke="shift meta s" />
+  </action>
   <action id="Vcs.Log.FocusTextFilter" />
   <action id="Vcs.Log.Refresh" />
   <action id="Vcs.Push">
