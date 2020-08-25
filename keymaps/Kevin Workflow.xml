@@ -97,14 +97,10 @@
   <action id="Images.ShowThumbnails" />
   <action id="InsertLiveTemplate" />
   <action id="NextOccurence" />
-  <action id="NextSplitter">
-    <keyboard-shortcut first-keystroke="meta j" second-keystroke="meta p" />
-  </action>
+  <action id="NextSplitter" />
   <action id="ParameterInfo" />
   <action id="PasteMultiple" />
-  <action id="PrevSplitter">
-    <keyboard-shortcut first-keystroke="meta j" second-keystroke="meta o" />
-  </action>
+  <action id="PrevSplitter" />
   <action id="PreviousOccurence" />
   <action id="PreviousTab">
     <keyboard-shortcut first-keystroke="ctrl left" />
