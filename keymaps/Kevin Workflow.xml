@@ -5,9 +5,6 @@
   </action>
   <action id="ChangesView.Diff" />
   <action id="ChangesView.GroupBy.Directory" />
-  <action id="CheckinProject">
-    <keyboard-shortcut first-keystroke="meta semicolon" />
-  </action>
   <action id="CloseActiveTab">
     <keyboard-shortcut first-keystroke="shift meta w" />
   </action>
@@ -137,9 +134,6 @@
   </action>
   <action id="Vcs.Log.FocusTextFilter" />
   <action id="Vcs.Log.Refresh" />
-  <action id="Vcs.Push">
-    <keyboard-shortcut first-keystroke="shift meta semicolon" />
-  </action>
   <action id="Vcs.UpdateProject" />
   <action id="XDebugger.CopyWatch" />
   <action id="hg4idea.QRefresh" />
