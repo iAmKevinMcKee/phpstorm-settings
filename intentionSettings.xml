@@ -1,0 +1,9 @@
+<application>
+  <component name="IntentionManagerSettings">
+    <ignoreAction name="Other/Flip ','" />
+    <ignoreAction name="XML/Rearrange tag attributes" />
+    <ignoreAction name="XML/Remove attribute" />
+    <ignoreAction name="Language injection/Inject language or reference" />
+    <ignoreAction name="Language injection/Edit injected fragment" />
+  </component>
+</application>
