@@ -38,4 +38,8 @@
     <option name="IS_DND_ENABLED" value="false" />
   </component>
   <component name="LiveEditOptions" chromeUpdateJSOnChanges="true" restartIfHotSwapFailed="true" />
+  <component name="TodoConfiguration">
+    <pattern pattern="\btodo\b.*" />
+    <pattern pattern="\bfixme\b.*" />
+  </component>
 </application>
