@@ -1,13 +1,14 @@
 <keymap version="1" name="Kevin Workflow" parent="Mac OS X 10.5+">
+  <action id="ActivateTerminalToolWindow">
+    <keyboard-shortcut first-keystroke="meta t" />
+  </action>
   <action id="Back">
     <keyboard-shortcut first-keystroke="meta alt left" />
     <mouse-shortcut keystroke="button4" />
   </action>
   <action id="ChangesView.Diff" />
   <action id="ChangesView.GroupBy.Directory" />
-  <action id="CloseActiveTab">
-    <keyboard-shortcut first-keystroke="shift meta w" />
-  </action>
+  <action id="CloseActiveTab" />
   <action id="CollapseAll">
     <keyboard-shortcut first-keystroke="meta subtract" />
   </action>
@@ -16,7 +17,7 @@
     <keyboard-shortcut first-keystroke="meta subtract" />
   </action>
   <action id="CollapseRegion">
-    <keyboard-shortcut first-keystroke="meta subtract" />
+    <keyboard-shortcut first-keystroke="shift meta open_bracket" />
   </action>
   <action id="CompareTwoFiles" />
   <action id="Console.TableResult.NextPage" />
@@ -64,7 +65,7 @@
     <keyboard-shortcut first-keystroke="meta add" />
   </action>
   <action id="ExpandRegion">
-    <keyboard-shortcut first-keystroke="shift meta open_bracket" />
+    <keyboard-shortcut first-keystroke="shift meta close_bracket" />
   </action>
   <action id="ExternalSystem.ExpandAll">
     <keyboard-shortcut first-keystroke="meta add" />
@@ -90,6 +91,9 @@
     <keyboard-shortcut first-keystroke="meta p" />
   </action>
   <action id="GotoLine" />
+  <action id="GotoSymbol">
+    <keyboard-shortcut first-keystroke="shift meta o" />
+  </action>
   <action id="GotoTest" />
   <action id="Images.Editor.ZoomIn">
     <keyboard-shortcut first-keystroke="meta add" />
@@ -99,6 +103,9 @@
   <action id="Jdbc.OpenConsole.New" />
   <action id="NextOccurence" />
   <action id="NextSplitter" />
+  <action id="NextTab">
+    <keyboard-shortcut first-keystroke="ctrl right" />
+  </action>
   <action id="ParameterInfo" />
   <action id="PasteMultiple" />
   <action id="PrevSplitter" />
@@ -114,13 +121,10 @@
   </action>
   <action id="Refresh" />
   <action id="Replace" />
-  <action id="Rerun">
-    <keyboard-shortcut first-keystroke="shift meta t" />
-  </action>
-  <action id="RunClass">
-    <keyboard-shortcut first-keystroke="meta t" />
-  </action>
+  <action id="Rerun" />
+  <action id="RunClass" />
   <action id="RunDashboard.CopyConfiguration" />
+  <action id="RunDashboard.Run" />
   <action id="RunDashboard.ShowConfigurations" />
   <action id="SelectAllOccurrences">
     <keyboard-shortcut first-keystroke="shift meta d" />
@@ -129,17 +133,30 @@
     <keyboard-shortcut first-keystroke="meta d" />
   </action>
   <action id="SendEOF" />
+  <action id="ServiceView.ShowServices" />
   <action id="SplitVertically">
     <keyboard-shortcut first-keystroke="meta j" second-keystroke="meta s" />
+  </action>
+  <action id="SurroundWith">
+    <keyboard-shortcut first-keystroke="shift meta t" />
+  </action>
+  <action id="SurroundWithEmmet">
+    <keyboard-shortcut first-keystroke="shift alt t" />
   </action>
   <action id="Uml.ShowDiff" />
   <action id="Unsplit">
     <keyboard-shortcut first-keystroke="shift meta j" second-keystroke="shift meta s" />
   </action>
+  <action id="UsageView.Rerun" />
   <action id="Vcs.Log.FocusTextFilter" />
   <action id="Vcs.Log.Refresh" />
   <action id="Vcs.UpdateProject" />
+  <action id="WrapTagAction">
+    <keyboard-shortcut first-keystroke="shift meta w" />
+  </action>
   <action id="XDebugger.CopyWatch" />
   <action id="hg4idea.QRefresh" />
   <action id="openAssertEqualsDiff" />
+  <action id="runShellFileAction" />
+  <action id="tasks.switch" />
 </keymap>
