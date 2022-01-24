@@ -143,6 +143,9 @@
   <action id="SurroundWithEmmet">
     <keyboard-shortcut first-keystroke="shift alt t" />
   </action>
+  <action id="TailwindAction">
+    <keyboard-shortcut first-keystroke="meta alt t" />
+  </action>
   <action id="Uml.ShowDiff" />
   <action id="Unsplit">
     <keyboard-shortcut first-keystroke="shift meta j" second-keystroke="shift meta s" />
