@@ -121,7 +121,9 @@
   </action>
   <action id="Refresh" />
   <action id="Replace" />
-  <action id="Rerun" />
+  <action id="Rerun">
+    <keyboard-shortcut first-keystroke="meta g" second-keystroke="t" />
+  </action>
   <action id="RunClass" />
   <action id="RunDashboard.CopyConfiguration" />
   <action id="RunDashboard.Run" />
