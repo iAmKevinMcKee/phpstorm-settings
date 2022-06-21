@@ -124,7 +124,9 @@
   <action id="Rerun">
     <keyboard-shortcut first-keystroke="meta g" second-keystroke="t" />
   </action>
-  <action id="RunClass" />
+  <action id="RunClass">
+    <keyboard-shortcut first-keystroke="alt t" />
+  </action>
   <action id="RunDashboard.CopyConfiguration" />
   <action id="RunDashboard.Run" />
   <action id="RunDashboard.ShowConfigurations" />
